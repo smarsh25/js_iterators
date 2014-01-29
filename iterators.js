@@ -6,6 +6,8 @@ var Iterators = (function() {
       // such that action is applied
       // to each element on the array
       // to which this function was applied
+      // this function should also return the 
+      // original array untouched
     },
     map: function(arr, action) {
       // implement map iterator
