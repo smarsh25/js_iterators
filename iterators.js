@@ -23,6 +23,19 @@ var Iterators = (function() {
         result.push(action(element));
       });
       return result;
+    },
+    reduce: function (arr, base, action) {
+      // as a BONUS, implement reduce
+      // btw, reduce is an alias for inject :)
+      
+      // this function should take an array, a 
+      // base value, and a combination action
+      // function -- for example add and perform
+      // the action on each successive element
+      Iterators.each(arr, function (element) {
+        base = action(base, element);
+      });
+      return base;  
     }
   };
 })();
@@ -63,3 +76,11 @@ console.log(
 // modify the original array's contents
 console.log("arr's contents:");
 console.log(arr);
+
+// should output the sum
+console.log("result of applying Iterators.reduce to arr with a sum function:");
+console.log(
+  Iterators.reduce(arr, 0, function (a, b) {
+    return a + b;
+  })
+);
