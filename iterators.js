@@ -15,6 +15,15 @@ var Iterators = (function() {
       // to each element on the array
       // returning a new array containing
       // the results of the applications
+    },
+    reduce: function(arr, base, action) {
+      // as a BONUS, implement reduce
+      // btw, reduce is an alias for inject :)
+      
+      // this function should take an array, a 
+      // base value, and a combination action
+      // function -- for example add and perform
+      // the action on each successive element
     }
   };
 })();
