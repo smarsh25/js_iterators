@@ -30,6 +30,12 @@ Iterators._each(arr, function (number) {
 });
 
 // should output
+// => [1,2,3]
+console.log("applying Iterators._each to arr should return the array:");
+Iterators._each(arr, function (number) {
+});
+
+// should output
 // [2, 4, 6]
 console.log("results of applying Iterators._map to arr:");
 console.log(
