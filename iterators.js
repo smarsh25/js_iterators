@@ -70,3 +70,11 @@ console.log(
 // modify the original array's contents
 console.log("arr's contents:");
 console.log(arr);
+
+// BONUS: should output the sum
+console.log("result of applying Iterators.reduce to arr with a sum function:");
+console.log(
+  Iterators.reduce(arr, 0, function (a, b) {
+    return a + b;
+  })
+);
