@@ -1,6 +1,7 @@
 // create a namespace for our iterator functions
 var Iterators = (function() {
   return {
+    self: Iterators,
     each: function (arr, action) {
       // implment the each iterator
       // such that action is applied
@@ -18,11 +19,11 @@ var Iterators = (function() {
       // to each element on the array
       // returning a new array containing
       // the results of the applications
-      var _arr = [];
-      for (var i = 0; i < arr.length; i++) {
-        _arr[i] = action(arr[i]);
-      }
-      return _arr;
+      var result = [];
+      self.each(arr, function(element) {
+        result.push(action(element));
+      });
+      return result;
     }
   };
 })();
