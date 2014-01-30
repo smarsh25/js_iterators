@@ -8,6 +8,10 @@ var Iterators = (function() {
       // to which this function was applied
       // this function should also return the 
       // original array untouched
+      for (var i = 0; i < arr.length; i++) {
+        action(arr[i]);
+      }
+      return arr;
     },
     map: function(arr, action) {
       // implement map iterator
@@ -36,15 +40,12 @@ var arr = [1,2,3];
 // 2
 // 3
 console.log("results of applying Iterators.each to arr:");
-Iterators.each(arr, function (number) {
-  console.log(number);
-});
+Iterators.each( arr, function(number){console.log(number);} );
 
 // should output
 // => [1,2,3]
 console.log("applying Iterators.each to arr should return the array:");
-Iterators.each(arr, function (number) {
-});
+console.log( Iterators.each(arr, function (number) {}) );
 
 // should output
 // [2, 4, 6]
