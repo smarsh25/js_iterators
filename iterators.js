@@ -19,6 +19,16 @@ var Iterators = (function() {
       // to each element on the array
       // returning a new array containing
       // the results of the applications
+      var result_array = [];
+      
+      // Iterators.each(arr, result_array.push(action()))
+      Iterators.each( arr, function(number){result_array.push(action(number));} );
+
+      // for (var i = 0; i < arr.length; i++) {
+      //   result_array.push(action(arr[i]));
+      // }
+
+      return result_array;
     },
     reduce: function(arr, base, action) {
       // as a BONUS, implement reduce
@@ -28,6 +38,9 @@ var Iterators = (function() {
       // base value, and a combination action
       // function -- for example add and perform
       // the action on each successive element
+      var total = base;
+      Iterators.each(arr, function(number){total = action(total, number)} );
+      return total;
     }
   };
 })();
@@ -51,9 +64,7 @@ console.log( Iterators.each(arr, function (number) {}) );
 // [2, 4, 6]
 console.log("results of applying Iterators.map to arr:");
 console.log(
-  Iterators.map(arr, function (number) {
-    return number * 2;
-  })
+  Iterators.map(arr, function(number){return number * 2;})
 );
 
 // should output
@@ -75,7 +86,13 @@ console.log(arr);
 // BONUS: should output the sum
 console.log("result of applying Iterators.reduce to arr with a sum function:");
 console.log(
-  Iterators.reduce(arr, 0, function (a, b) {
-    return a + b;
-  })
+  Iterators.reduce(arr, 0, function(a, b){return a + b;}) 
 );
+
+// total = base
+// for (i=0; i<len; i++) {
+  // total = action(total, arr[i])
+// }
+
+
+
